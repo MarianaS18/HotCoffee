@@ -8,17 +8,17 @@
 import Foundation
 
 enum CoffeeName: String, Codable {
-    case cappuccino
-    case latte
-    case espresso
-    case cortado
+    case cappuccino = "Cappuccino"
+    case latte = "Latte"
+    case espresso = "Espresso"
+    case cortado = "Cortado"
     case hotCoffee = "Hot Coffee"
 }
 
 enum CoffeeSize: String, Codable {
     case small = "Small"
     case medium = "Medium"
-    case large
+    case large = "Large"
 }
 
 struct Order: Codable {
