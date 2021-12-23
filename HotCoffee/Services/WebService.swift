@@ -10,6 +10,7 @@
 // MARK: - @objc private functions
 
 import Foundation
+import UIKit
 
 enum NetworkError: Error {
     case decodingError
@@ -17,9 +18,21 @@ enum NetworkError: Error {
     case urlError
 }
 
+enum HttpMethod: String {
+    case get = "GET"
+    case post = "POST"
+}
+
 struct Resource<T: Codable> {
     // MARK: - Public properties
     let url: URL
+    var httpMethod: HttpMethod = .get
+    var body: Data? = nil
+    
+    // MARK: - Inintializer
+    init(url: URL) {
+        self.url = url
+    }
 }
 
 class WebService {

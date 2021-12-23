@@ -26,7 +26,7 @@ class AddOrderViewController: UIViewController {
     
     // MARK: - Private functions
     private func setupUI() {
-        self.coffeeSizesSegmentedController = UISegmentedControl(items: self.vm.coffeeSizes)
+        self.coffeeSizesSegmentedController = UISegmentedControl(items: self.vm.sizes)
         
         /// add constraints to segmented controller
         self.coffeeSizesSegmentedController.translatesAutoresizingMaskIntoConstraints = false
@@ -47,7 +47,7 @@ class AddOrderViewController: UIViewController {
         self.vm.name = name
         self.vm.price = Double(price!)
         self.vm.selectedSize = size
-        self.vm.selectedType = self.vm.coffeeNames[indexPath.row]
+        self.vm.selectedType = self.vm.types[indexPath.row]
     }
 }
 
@@ -66,11 +66,11 @@ extension AddOrderViewController: UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "addOrderCell", for: indexPath) as? AddOrderTableViewCell else {
             fatalError("cell not found")
         }
-        cell.coffeeNameLabel.text = self.vm.coffeeNames[indexPath.row]
+        cell.coffeeNameLabel.text = self.vm.types[indexPath.row]
         return cell
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.vm.coffeeNames.count
+        return self.vm.types.count
     }
 }
