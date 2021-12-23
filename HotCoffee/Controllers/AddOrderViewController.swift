@@ -10,9 +10,28 @@ import UIKit
 class AddOrderViewController: UIViewController {
     // MARK: - IBOutlets
     @IBOutlet weak var tableView: UITableView!
-    
+
     // MARK: - Private properties
     private var vm = AddNewOrderViewModel()
+    private var coffeeSizesSegmentedController: UISegmentedControl!
+    
+    // MARK: - View functions
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        setupUI()
+    }
+    
+    // MARK: - Private functions
+    private func setupUI() {
+        self.coffeeSizesSegmentedController = UISegmentedControl(items: self.vm.coffeeSizes)
+        
+        /// add constraints to segmented controller
+        self.coffeeSizesSegmentedController.translatesAutoresizingMaskIntoConstraints = false
+        self.view.addSubview(self.coffeeSizesSegmentedController)
+        self.coffeeSizesSegmentedController.topAnchor.constraint(equalTo: self.tableView.bottomAnchor, constant: 20.0).isActive = true
+        self.coffeeSizesSegmentedController.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
+    }
 }
 
 extension AddOrderViewController: UITableViewDelegate {

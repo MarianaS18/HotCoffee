@@ -18,20 +18,20 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="orderCell" id="aft-WE-Lal" customClass="OrderTableViewCell" customModule="HotCoffee" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="44.5" width="414" height="43.5"/>
+                                <rect key="frame" x="0.0" y="44.5" width="414" height="43"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="aft-WE-Lal" id="DAo-cU-POl">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qU0-bv-G9v">
-                                            <rect key="frame" x="20" y="11" width="42" height="21.5"/>
+                                            <rect key="frame" x="20" y="11" width="42" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lS9-4d-Ugm">
-                                            <rect key="frame" x="356" y="11" width="42" height="21.5"/>
+                                            <rect key="frame" x="356" y="11" width="42" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -112,16 +112,8 @@
                                     <outlet property="delegate" destination="zDC-2K-wsh" id="MQg-iJ-sep"/>
                                 </connections>
                             </tableView>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" apportionsSegmentWidthsByContent="YES" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="J22-bx-Ue3">
-                                <rect key="frame" x="118.5" y="510" width="177" height="32"/>
-                                <segments>
-                                    <segment title="Small"/>
-                                    <segment title="Medium"/>
-                                    <segment title="Large"/>
-                                </segments>
-                            </segmentedControl>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Your Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FWw-xz-ejC">
-                                <rect key="frame" x="107" y="571" width="200" height="34"/>
+                                <rect key="frame" x="107" y="734" width="200" height="34"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="CdJ-no-ubN"/>
                                 </constraints>
@@ -129,7 +121,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Coffee Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YlR-R8-ZFR">
-                                <rect key="frame" x="107" y="625" width="200" height="34"/>
+                                <rect key="frame" x="107" y="788" width="200" height="34"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="Kd8-Mi-Teh"/>
                                 </constraints>
@@ -142,12 +134,10 @@
                         <constraints>
                             <constraint firstItem="fKp-gU-gIx" firstAttribute="width" secondItem="HNi-12-9Cd" secondAttribute="width" id="5sJ-Rs-fLU"/>
                             <constraint firstItem="YlR-R8-ZFR" firstAttribute="centerX" secondItem="HNi-12-9Cd" secondAttribute="centerX" id="EbS-9C-eii"/>
-                            <constraint firstItem="J22-bx-Ue3" firstAttribute="top" secondItem="fKp-gU-gIx" secondAttribute="bottom" constant="33" id="HQQ-BB-q3Z"/>
                             <constraint firstItem="fKp-gU-gIx" firstAttribute="top" secondItem="HNi-12-9Cd" secondAttribute="topMargin" id="IXl-EY-t1N"/>
-                            <constraint firstItem="J22-bx-Ue3" firstAttribute="centerX" secondItem="HNi-12-9Cd" secondAttribute="centerX" id="JlD-96-GEf"/>
                             <constraint firstItem="fKp-gU-gIx" firstAttribute="height" secondItem="HNi-12-9Cd" secondAttribute="height" multiplier="0.5" id="JqE-Ni-L00"/>
-                            <constraint firstItem="FWw-xz-ejC" firstAttribute="top" secondItem="J22-bx-Ue3" secondAttribute="bottom" constant="30" id="O0g-HY-AKx"/>
-                            <constraint firstItem="Hxt-HM-wIC" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="YlR-R8-ZFR" secondAttribute="bottom" constant="20" id="Xy5-kb-Nqy"/>
+                            <constraint firstItem="FWw-xz-ejC" firstAttribute="top" relation="greaterThanOrEqual" secondItem="fKp-gU-gIx" secondAttribute="bottom" constant="20" id="SWj-hb-G7h"/>
+                            <constraint firstItem="Hxt-HM-wIC" firstAttribute="bottom" secondItem="YlR-R8-ZFR" secondAttribute="bottom" constant="20" id="Xy5-kb-Nqy"/>
                             <constraint firstItem="YlR-R8-ZFR" firstAttribute="top" secondItem="FWw-xz-ejC" secondAttribute="bottom" constant="20" id="Zrc-5B-hVw"/>
                             <constraint firstItem="FWw-xz-ejC" firstAttribute="centerX" secondItem="HNi-12-9Cd" secondAttribute="centerX" id="lIV-Pj-SvG"/>
                             <constraint firstItem="fKp-gU-gIx" firstAttribute="leading" secondItem="Hxt-HM-wIC" secondAttribute="leading" id="tnD-4K-Pb1"/>
