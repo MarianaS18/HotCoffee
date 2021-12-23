@@ -120,7 +120,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Coffee Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YlR-R8-ZFR">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Price" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YlR-R8-ZFR">
                                 <rect key="frame" x="107" y="788" width="200" height="34"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="Kd8-Mi-Teh"/>
@@ -145,9 +145,15 @@
                     </view>
                     <navigationItem key="navigationItem" title="Add New Order" id="3n8-hc-q85">
                         <barButtonItem key="leftBarButtonItem" title="Close" id="1sg-a8-3iS"/>
-                        <barButtonItem key="rightBarButtonItem" title="Save" id="DIi-D8-yph"/>
+                        <barButtonItem key="rightBarButtonItem" title="Save" id="DIi-D8-yph">
+                            <connections>
+                                <action selector="save:" destination="zDC-2K-wsh" id="uf4-GM-083"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="nameTextField" destination="FWw-xz-ejC" id="Rhh-8I-iaT"/>
+                        <outlet property="priceTextField" destination="YlR-R8-ZFR" id="kZv-95-rzQ"/>
                         <outlet property="tableView" destination="fKp-gU-gIx" id="tvI-bc-2h1"/>
                     </connections>
                 </viewController>

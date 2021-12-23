@@ -10,6 +10,8 @@ import UIKit
 class AddOrderViewController: UIViewController {
     // MARK: - IBOutlets
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var nameTextField: UITextField!
+    @IBOutlet weak var priceTextField: UITextField!
 
     // MARK: - Private properties
     private var vm = AddNewOrderViewModel()
@@ -31,6 +33,21 @@ class AddOrderViewController: UIViewController {
         self.view.addSubview(self.coffeeSizesSegmentedController)
         self.coffeeSizesSegmentedController.topAnchor.constraint(equalTo: self.tableView.bottomAnchor, constant: 20.0).isActive = true
         self.coffeeSizesSegmentedController.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
+    }
+    
+    // MARK: - IBActions
+    @IBAction func save(_ sender: UIBarButtonItem) {
+        let name = nameTextField.text
+        let price = priceTextField.text
+        let size = coffeeSizesSegmentedController.titleForSegment(at: coffeeSizesSegmentedController.selectedSegmentIndex)
+        
+        guard let indexPath = tableView.indexPathForSelectedRow else {
+            fatalError("error in selected coffee")
+        }
+        self.vm.name = name
+        self.vm.price = Double(price!)
+        self.vm.selectedSize = size
+        self.vm.selectedType = self.vm.coffeeNames[indexPath.row]
     }
 }
 
