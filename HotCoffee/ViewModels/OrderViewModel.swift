@@ -4,18 +4,16 @@
 //
 //  Created by Mariana Steblii on 23/12/2021.
 //
-// MARK: - IBOutlets
 // MARK: - View functions
 // MARK: - Private functions
 // MARK: - Public functions
 // MARK: - @objc private functions
-// MARK: - IBActions
 
 import Foundation
 
 struct OrderViewModel {
-    // MARK: - Private properties
-    private let order: Order
+    // MARK: - Public properties
+    let order: Order
 }
 
 extension OrderViewModel {
