@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum CoffeeName: String, Codable {
+enum CoffeeName: String, Codable, CaseIterable {
     case cappuccino = "Cappuccino"
     case latte = "Latte"
     case espresso = "Espresso"
@@ -15,7 +15,7 @@ enum CoffeeName: String, Codable {
     case hotCoffee = "Hot Coffee"
 }
 
-enum CoffeeSize: String, Codable {
+enum CoffeeSize: String, Codable, CaseIterable {
     case small = "Small"
     case medium = "Medium"
     case large = "Large"

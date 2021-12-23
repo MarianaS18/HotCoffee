@@ -82,7 +82,7 @@
                                 <rect key="frame" x="0.0" y="56" width="414" height="421"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="uCk-dM-06g">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="addOrderCell" id="uCk-dM-06g" customClass="AddOrderTableViewCell" customModule="HotCoffee" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="44.5" width="414" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="uCk-dM-06g" id="he7-US-o9j">
@@ -90,27 +90,27 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3nX-N3-mN5">
-                                                    <rect key="frame" x="20" y="11.5" width="42" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UAA-YT-ti3">
-                                                    <rect key="frame" x="356" y="11.5" width="42" height="21"/>
+                                                    <rect key="frame" x="20" y="11.5" width="374" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="3nX-N3-mN5" firstAttribute="leading" secondItem="he7-US-o9j" secondAttribute="leadingMargin" id="J3q-6K-Y4B"/>
-                                                <constraint firstItem="UAA-YT-ti3" firstAttribute="centerY" secondItem="he7-US-o9j" secondAttribute="centerY" id="QBf-J2-i2P"/>
-                                                <constraint firstAttribute="trailing" secondItem="UAA-YT-ti3" secondAttribute="trailing" constant="16" id="c8V-4W-D8y"/>
+                                                <constraint firstItem="3nX-N3-mN5" firstAttribute="leading" secondItem="he7-US-o9j" secondAttribute="leadingMargin" id="DQm-G7-cjB"/>
+                                                <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="3nX-N3-mN5" secondAttribute="trailing" constant="20" symbolic="YES" id="UDf-fo-tjc"/>
                                                 <constraint firstItem="3nX-N3-mN5" firstAttribute="centerY" secondItem="he7-US-o9j" secondAttribute="centerY" id="e41-Nj-Ulf"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="coffeeNameLabel" destination="3nX-N3-mN5" id="wc3-3I-vJo"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="zDC-2K-wsh" id="Mtw-WO-Y46"/>
+                                    <outlet property="delegate" destination="zDC-2K-wsh" id="MQg-iJ-sep"/>
+                                </connections>
                             </tableView>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" apportionsSegmentWidthsByContent="YES" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="J22-bx-Ue3">
                                 <rect key="frame" x="118.5" y="510" width="177" height="32"/>
@@ -120,18 +120,18 @@
                                     <segment title="Large"/>
                                 </segments>
                             </segmentedControl>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FWw-xz-ejC">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Your Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FWw-xz-ejC">
                                 <rect key="frame" x="107" y="571" width="200" height="34"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="200" id="CdJ-no-ubN"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="CdJ-no-ubN"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YlR-R8-ZFR">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Coffee Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YlR-R8-ZFR">
                                 <rect key="frame" x="107" y="625" width="200" height="34"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="200" id="Kd8-Mi-Teh"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="Kd8-Mi-Teh"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -157,6 +157,9 @@
                         <barButtonItem key="leftBarButtonItem" title="Close" id="1sg-a8-3iS"/>
                         <barButtonItem key="rightBarButtonItem" title="Save" id="DIi-D8-yph"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="fKp-gU-gIx" id="tvI-bc-2h1"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lst-Np-fU0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

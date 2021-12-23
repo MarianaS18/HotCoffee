@@ -19,6 +19,8 @@
 		56D63EC127748AC9000858B7 /* OrderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D63EC027748AC9000858B7 /* OrderViewModel.swift */; };
 		56D63EC327748C41000858B7 /* OrderListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D63EC227748C41000858B7 /* OrderListViewModel.swift */; };
 		56D63EC62774910A000858B7 /* OrderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D63EC52774910A000858B7 /* OrderTableViewCell.swift */; };
+		56D63EC827749926000858B7 /* AddNewOrderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D63EC727749926000858B7 /* AddNewOrderViewModel.swift */; };
+		56D63ECA27749C72000858B7 /* AddOrderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D63EC927749C72000858B7 /* AddOrderTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +38,8 @@
 		56D63EC027748AC9000858B7 /* OrderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderViewModel.swift; sourceTree = "<group>"; };
 		56D63EC227748C41000858B7 /* OrderListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderListViewModel.swift; sourceTree = "<group>"; };
 		56D63EC52774910A000858B7 /* OrderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderTableViewCell.swift; sourceTree = "<group>"; };
+		56D63EC727749926000858B7 /* AddNewOrderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewOrderViewModel.swift; sourceTree = "<group>"; };
+		56D63EC927749C72000858B7 /* AddOrderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddOrderTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +117,7 @@
 			children = (
 				56D63EC027748AC9000858B7 /* OrderViewModel.swift */,
 				56D63EC227748C41000858B7 /* OrderListViewModel.swift */,
+				56D63EC727749926000858B7 /* AddNewOrderViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -121,6 +126,7 @@
 			isa = PBXGroup;
 			children = (
 				56D63EC52774910A000858B7 /* OrderTableViewCell.swift */,
+				56D63EC927749C72000858B7 /* AddOrderTableViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -202,8 +208,10 @@
 				56D63EB6277469E1000858B7 /* OrdersTableViewController.swift in Sources */,
 				56D63EBB277481A9000858B7 /* WebService.swift in Sources */,
 				56D63EC127748AC9000858B7 /* OrderViewModel.swift in Sources */,
+				56D63EC827749926000858B7 /* AddNewOrderViewModel.swift in Sources */,
 				56D63EC62774910A000858B7 /* OrderTableViewCell.swift in Sources */,
 				56D63EB827746A14000858B7 /* AddOrderViewController.swift in Sources */,
+				56D63ECA27749C72000858B7 /* AddOrderTableViewCell.swift in Sources */,
 				56D63EC327748C41000858B7 /* OrderListViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
