@@ -50,10 +50,56 @@
                     <view key="view" contentMode="scaleToFill" id="HNi-12-9Cd">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="fKp-gU-gIx">
+                                <rect key="frame" x="0.0" y="56" width="414" height="421"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" apportionsSegmentWidthsByContent="YES" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="J22-bx-Ue3">
+                                <rect key="frame" x="118.5" y="510" width="177" height="32"/>
+                                <segments>
+                                    <segment title="Small"/>
+                                    <segment title="Medium"/>
+                                    <segment title="Large"/>
+                                </segments>
+                            </segmentedControl>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FWw-xz-ejC">
+                                <rect key="frame" x="107" y="571" width="200" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="CdJ-no-ubN"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YlR-R8-ZFR">
+                                <rect key="frame" x="107" y="625" width="200" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="Kd8-Mi-Teh"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="Hxt-HM-wIC"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="fKp-gU-gIx" firstAttribute="width" secondItem="HNi-12-9Cd" secondAttribute="width" id="5sJ-Rs-fLU"/>
+                            <constraint firstItem="YlR-R8-ZFR" firstAttribute="centerX" secondItem="HNi-12-9Cd" secondAttribute="centerX" id="EbS-9C-eii"/>
+                            <constraint firstItem="J22-bx-Ue3" firstAttribute="top" secondItem="fKp-gU-gIx" secondAttribute="bottom" constant="33" id="HQQ-BB-q3Z"/>
+                            <constraint firstItem="fKp-gU-gIx" firstAttribute="top" secondItem="HNi-12-9Cd" secondAttribute="topMargin" id="IXl-EY-t1N"/>
+                            <constraint firstItem="J22-bx-Ue3" firstAttribute="centerX" secondItem="HNi-12-9Cd" secondAttribute="centerX" id="JlD-96-GEf"/>
+                            <constraint firstItem="fKp-gU-gIx" firstAttribute="height" secondItem="HNi-12-9Cd" secondAttribute="height" multiplier="0.5" id="JqE-Ni-L00"/>
+                            <constraint firstItem="FWw-xz-ejC" firstAttribute="top" secondItem="J22-bx-Ue3" secondAttribute="bottom" constant="30" id="O0g-HY-AKx"/>
+                            <constraint firstItem="Hxt-HM-wIC" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="YlR-R8-ZFR" secondAttribute="bottom" constant="20" id="Xy5-kb-Nqy"/>
+                            <constraint firstItem="YlR-R8-ZFR" firstAttribute="top" secondItem="FWw-xz-ejC" secondAttribute="bottom" constant="20" id="Zrc-5B-hVw"/>
+                            <constraint firstItem="FWw-xz-ejC" firstAttribute="centerX" secondItem="HNi-12-9Cd" secondAttribute="centerX" id="lIV-Pj-SvG"/>
+                            <constraint firstItem="fKp-gU-gIx" firstAttribute="leading" secondItem="Hxt-HM-wIC" secondAttribute="leading" id="tnD-4K-Pb1"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Add New Order" id="3n8-hc-q85"/>
+                    <navigationItem key="navigationItem" title="Add New Order" id="3n8-hc-q85">
+                        <barButtonItem key="leftBarButtonItem" title="Close" id="1sg-a8-3iS"/>
+                        <barButtonItem key="rightBarButtonItem" title="Save" id="DIi-D8-yph"/>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lst-Np-fU0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
