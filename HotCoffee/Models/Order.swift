@@ -12,11 +12,12 @@ enum CoffeeName: String, Codable {
     case latte
     case espresso
     case cortado
+    case hotCoffee = "Hot Coffee"
 }
 
 enum CoffeeSize: String, Codable {
-    case small
-    case medium
+    case small = "Small"
+    case medium = "Medium"
     case large
 }
 
