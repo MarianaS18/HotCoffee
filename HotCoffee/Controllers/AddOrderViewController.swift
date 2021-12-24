@@ -7,6 +7,11 @@
 
 import UIKit
 
+protocol AddOrderViewControllerDelegate {
+    func addOrderViewControllerDidSave(order: Order, controller: UIViewController)
+    func addOrderViewControllerDidClose(controller: UIViewController)
+}
+
 class AddOrderViewController: UIViewController {
     // MARK: - IBOutlets
     @IBOutlet weak var tableView: UITableView!
@@ -16,6 +21,9 @@ class AddOrderViewController: UIViewController {
     // MARK: - Private properties
     private var vm = AddNewOrderViewModel()
     private var coffeeSizesSegmentedController: UISegmentedControl!
+    
+    // MARK: - Public properties
+    var delegate: AddOrderViewControllerDelegate?
     
     // MARK: - View functions
     override func viewDidLoad() {
@@ -40,7 +48,7 @@ class AddOrderViewController: UIViewController {
         let name = nameTextField.text
         let price = priceTextField.text
         let size = coffeeSizesSegmentedController.titleForSegment(at: coffeeSizesSegmentedController.selectedSegmentIndex)
-        
+
         guard let indexPath = tableView.indexPathForSelectedRow else {
             fatalError("error in selected coffee")
         }
@@ -48,6 +56,25 @@ class AddOrderViewController: UIViewController {
         self.vm.price = Double(price!)
         self.vm.selectedSize = size
         self.vm.selectedType = self.vm.types[indexPath.row]
+        
+        WebService().load(resource: Order.create(vm: self.vm)) { result in
+            switch result {
+            case .success(let order):
+                if let order = order, let delegate = self.delegate {
+                    DispatchQueue.main.async {
+                        delegate.addOrderViewControllerDidSave(order: order, controller: self)
+                    }
+                }
+            case .failure(let error):
+                print(error)
+            }
+        }
+    }
+    
+    @IBAction func close(_ sender: UIBarButtonItem) {
+        if let delegate = self.delegate {
+            delegate.addOrderViewControllerDidClose(controller: self)
+        }
     }
 }
 

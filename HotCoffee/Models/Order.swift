@@ -32,11 +32,11 @@ extension Order {
     init?(_ vm: AddNewOrderViewModel) {
         guard let name = vm.name,
               let price = vm.price,
-              let selectedSize = CoffeeSize(rawValue: vm.selectedSize!.lowercased()),
-              let selectedType = CoffeeType(rawValue: vm.selectedType!.lowercased()) else {
+              let selectedSize = CoffeeSize(rawValue: vm.selectedSize!),
+              let selectedType = CoffeeType(rawValue: vm.selectedType!) else {
                   return nil
               }
-        
+
         self.name = name
         self.total = price
         self.coffeeName = selectedType
@@ -52,7 +52,6 @@ extension Order {
     
     static func create(vm: AddNewOrderViewModel) -> Resource<Order?> {
         let order = Order(vm)
-        
         guard let url = URL(string: "https://island-bramble.glitch.me/orders") else {
             fatalError("URL was incorrect")
         }
